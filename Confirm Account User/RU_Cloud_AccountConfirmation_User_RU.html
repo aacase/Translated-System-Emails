@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+    <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width"/>
+   <style>
+   /* Client-specific Styles & Reset */
+   
+   .tinyFont{
+  font-size: 10px;
+   }
+   .bold{
+   font-weight: bold;
+   }
+   #outlook a {
+   padding:0;
+   }
+   body{
+   width:100% !important;
+   min-width: 100%;
+   -webkit-text-size-adjust:100%;
+   -ms-text-size-adjust:100%;
+   margin:0;
+   padding:0;
+   }
+   
+   #backgroundTable {
+   margin:0;
+   padding:0;
+   width:100% !important;
+   line-height: 100% !important;
+   }
+   img {
+   outline:none;
+   text-decoration:none;
+   -ms-interpolation-mode: bicubic;
+   width: auto;
+   max-width: 100%;
+   float: left;
+   clear: both;
+   display: block;
+   }
+   center {
+   width: 100%;
+   min-width: 580px;
+   }
+   a img {
+   border: none;
+   }
+   p {
+   margin: 0 0 0 10px;
+   }
+   /*this line could be causing BB issues*/
+   table {
+   border-spacing: 0;
+   border-collapse: collapse;
+   }
+   td {
+   word-break: break-word;
+   -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+   hyphens: auto;
+   border-collapse: collapse !important;
+   }
+   table, tr, td {
+   padding: 0;
+   vertical-align: top;
+   text-align: left;
+   }
+   /*hr {
+   color: green;
+   background-color: green;
+   height: 1px;
+   border: none;
+   }*/
+   hr {
+   display: block;
+   height: 1px;
+   border: 0;
+   border-top: 1px solid #cccccc;
+   margin: 1em 0;
+   padding: 0;
+   }
+   /* Responsive Grid */
+   table.body {
+   height: 100%;
+   width: 100%;
+   }
+   table.container {
+   width: 580px;
+   margin: 0 auto;
+   text-align: inherit;
+   color: pink;
+   }
+   table.row {
+   padding: 0px;
+   width: 100%;
+   position: relative;
+   }
+   table.container table.row {
+   display: block;
+   }
+   td.wrapper {
+   padding: 10px 20px 0px 0px;
+   position: relative;
+   }
+   table.columns,
+   table.column {
+   margin: 0 auto;
+   }
+   table.columns td,
+   table.column td {
+   padding: 0px 0px 10px;
+   }
+   table.columns td.sub-columns,
+   table.column td.sub-columns,
+   table.columns td.sub-column,
+   table.column td.sub-column {
+   padding-right: 10px;
+   }
+   td.sub-column, td.sub-columns {
+   min-width: 0px;
+   }
+   table.row td.last,
+   table.container td.last {
+   padding-right: 0px;
+   }
+   
+   table.three { width: 130px; }
+ 
+   table.six { width: 280px; }
+   
+   table.nine { width: 430px; }
+  
+   table.twelve { width: 580px; }
+   
+   table.three center { min-width: 130px; }
+   
+   table.six center { min-width: 280px; }
+   
+   table.eleven center { min-width: 530px; }
+   table.twelve center { min-width: 580px; }
+  
+   table.three .panel center { min-width: 110px; }
+  
+   table.six .panel center { min-width: 260px; }
+   
+   table.eight .panel center { min-width: 360px; }
+  
+   table.eleven .panel center { min-width: 510px; }
+   table.twelve .panel center { min-width: 560px; }
+   
+   .body .columns td.three,
+   .body .column td.three { width: 25%; }
+   
+   
+   .body .columns td.six,
+   .body .column td.six { width: 50%; }
+   
+   .body .columns td.eleven,
+   .body .column td.eleven { width: 91.666666%; }
+   .body .columns td.twelve,
+   .body .column td.twelve { width: 100%; }
+   
+   td.expander {
+   visibility: hidden;
+   width: 0px;
+   padding: 0 !important;
+   }
+  
+   
+   /* Block Grid */
+   
+   /* Alignment & Visibility Classes */
+   table.center, td.center {
+   text-align: center;
+   }
+   h1.center,
+   h2.center,
+   h3.center,
+   h4.center,
+   h5.center,
+   h6.center {
+   text-align: center;
+   }
+   span.center {
+   display: block;
+   width: 100%;
+   text-align: center;
+   }
+   img.center {
+   margin: 0 auto;
+   float: none;
+   }
+ 
+   /* Typography */
+   body, table.body, h1, h2, h3, h4, h5, h6, p, td {
+   color: #222222;
+   font-family: "Helvetica", "Arial", sans-serif;
+   font-weight: normal;
+   padding:0;
+   margin: 0;
+   text-align: left;
+   line-height: 1.3;
+   }
+   h1, h2, h3, h4, h5, h6 {
+   word-break: normal;
+   }
+   h1 {font-size: 40px;}
+   h2 {font-size: 36px;}
+   h3 {font-size: 32px;}
+   h4 {font-size: 28px;}
+   h5 {font-size: 24px;}
+   h6 {font-size: 20px;}
+   body, table.body, p, td {font-size: 14px;line-height:19px;}
+   p.lead, p.lede, p.leed {
+   font-size: 18px;
+   line-height:21px;
+   }
+   p {
+   margin-bottom: 10px;
+   }
+   small {
+   font-size: 10px;
+   }
+   a {
+   color: #2ba6cb;
+   text-decoration: none;
+   }
+   a:hover {
+   color: #2795b6 !important;
+   }
+   a:active {
+   color: #2795b6 !important;
+   }
+   a:visited {
+   color: #2ba6cb !important;
+   }
+   h1 a,
+   h2 a,
+   h3 a,
+   h4 a,
+   h5 a,
+   h6 a {
+   color: #2ba6cb;
+   }
+   h1 a:active,
+   h2 a:active,
+   h3 a:active,
+   h4 a:active,
+   h5 a:active,
+   h6 a:active {
+   color: #2ba6cb !important;
+   }
+   h1 a:visited,
+   h2 a:visited,
+   h3 a:visited,
+   h4 a:visited,
+   h5 a:visited,
+   h6 a:visited {
+   color: #2ba6cb !important;
+   }
+   /* Panels */
+   .panel {
+   background: #f2f2f2;
+   border: 1px solid green;
+   padding: 10px !important;
+   }
+   .sub-grid table {
+   width: 100%;
+   }
+   .sub-grid td.sub-columns {
+   padding-bottom: 0;
+   }
+   /* Buttons */
+   
+   table.tiny-button
+   {
+   width: 100%;
+   overflow: hidden;
+   }
+   table.button td,
+   table.tiny-button td
+   {
+   display: block;
+   width: auto !important;
+   text-align: center;
+   background: #2ba6cb;
+   border: 1px solid #2284a1;
+   color: #ffffff;
+   padding: 8px 0;
+   }
+   table.tiny-button td {
+   padding: 5px 0 4px;
+   }
+   
+   table.button td a,
+   table.tiny-button td a
+   {
+   font-weight: bold;
+   text-decoration: none;
+   font-family: Helvetica, Arial, sans-serif;
+   color: #ffffff;
+   font-size: 16px;
+   }
+   table.tiny-button td a {
+   font-size: 12px;
+   font-weight: normal;
+   }
+   
+   table.button:hover td,
+   table.button:visited td,
+   table.button:active td {
+   background: #2795b6 !important;
+   }
+   table.button:hover td a,
+   table.button:visited td a,
+   table.button:active td a {
+   color: #ffffff !important;
+   }
+   table.button:hover td,
+   table.tiny-button:hover td,
+   table.small-button:hover td,
+   table.medium-button:hover td,
+   table.large-button:hover td {
+   background: #2795b6 !important;
+   }
+   table.button:hover td a,
+   table.button:active td a,
+   table.button td a:visited,
+   table.tiny-button:hover td a,
+   table.tiny-button:active td a,
+   table.tiny-button td a:visited,
+   table.small-button:hover td a,
+   table.small-button:active td a,
+   table.small-button td a:visited,
+   table.medium-button:hover td a,
+   table.medium-button:active td a,
+   table.medium-button td a:visited,
+   table.large-button:hover td a,
+   table.large-button:active td a,
+   table.large-button td a:visited {
+   color: #ffffff !important;
+   }
+
+ 
+  
+   /* Outlook First */
+   body.outlook p {
+   display: inline !important;
+   }
+   /*  Media Queries */
+   @media only screen and (max-width: 600px) {
+   table[class="body"] img {
+   width: auto !important;
+   height: auto !important;
+   }
+   table[class="body"] center {
+   min-width: 0 !important;
+   }
+   table[class="body"] .container {
+   width: 95% !important;
+   }
+   table[class="body"] .row {
+   width: 100% !important;
+   display: block !important;
+   }
+   table[class="body"] .wrapper {
+   display: block !important;
+   padding-right: 0 !important;
+   }
+   table[class="body"] .columns,
+   table[class="body"] .column {
+   table-layout: fixed !important;
+   float: none !important;
+   width: 100% !important;
+   padding-right: 0px !important;
+   padding-left: 0px !important;
+   display: block !important;
+   }
+   table[class="body"] .wrapper.first .columns,
+   table[class="body"] .wrapper.first .column {
+   display: table !important;
+   }
+   table[class="body"] table.columns td,
+   table[class="body"] table.column td {
+   width: 100% !important;
+   }
+   
+   table[class="body"] .columns td.three,
+   table[class="body"] .column td.three { width: 25% !important; }
+   
+   table[class="body"] .columns td.six,
+   table[class="body"] .column td.six { width: 50% !important; }
+   table[class="body"] .columns td.seven,
+   table[class="body"] .column td.seven { width: 58.333333% !important; }
+   table[class="body"] .columns td.eight,
+   table[class="body"] .column td.eight { width: 66.666666% !important; }
+   table[class="body"] .columns td.nine,
+   table[class="body"] .column td.nine { width: 75% !important; }
+   table[class="body"] .columns td.ten,
+   table[class="body"] .column td.ten { width: 83.333333% !important; }
+   table[class="body"] .columns td.eleven,
+   table[class="body"] .column td.eleven { width: 91.666666% !important; }
+   table[class="body"] .columns td.twelve,
+   table[class="body"] .column td.twelve { width: 100% !important; }
+   table[class="body"] td.offset-by-one,
+   
+   table[class="body"] table.columns td.expander {
+   width: 1px !important;
+   }
+  
+ 
+   
+   }
+   </style>
+   <style>
+   
+   table.lifeButton td {
+   background: #33bcaa;
+   border-color: #0087bb;
+   }
+   
+   .template-label {
+   color: #ffffff;
+   font-weight: bold;
+   font-size: 11px;
+   }
+   .callout .wrapper {
+   padding-bottom: 20px;
+   }
+   .callout .panel {
+   background: #ECF8FF;
+   border-color: #b9e5ff;
+   }
+   .header {
+   
+   }
+   .footer .wrapper {
+   background: #ebebeb;
+   }
+   .footer h5 {
+   padding-bottom: 10px;
+   }
+  
+   table.columns .left-text-pad {
+   padding-left: 10px;
+   }
+   table.columns .right-text-pad {
+   padding-right: 10px;
+   }
+   @media only screen and (max-width: 600px) {
+   table[class="body"] .right-text-pad {
+   padding-left: 10px !important;
+   }
+   table[class="body"] .left-text-pad {
+   padding-right: 10px !important;
+   }
+   }
+   .lifeButton{
+   color: #33bcaa;
+   }
+   </style>
+    </head>
+    <body>
+   <table class="body">
+  <tr>
+ <td class="center " align="center" valign="top">
+<center>
+<table class="row header">
+    <tr class="colorTest">
+   <td class="center" align="center">
+  <center>
+  <table class="container ">
+ <tr>
+<td class="wrapper last">
+    <table class="twelve columns">
+   <tr>
+  <td class="six sub-columns">
+ <img src="https://img.en25.com/EloquaImages/clients/LifeSize/%7B3ff1535f-8bb9-4abb-a8ca-17b2c3ca0ac5%7D_logo.png">
+  </td>
+  <td class="six sub-columns last" style="text-align:right; vertical-align:middle;">
+ <span class="template-label">&nbsp;</span>
+  </td>
+  <td class="expander"></td>
+   </tr>
+    </table>
+</td>
+ </tr>
+  </table>
+  </center>
+   </td>
+    </tr>
+</table>
+<table class="container">
+    <tr>
+   <td>
+  <table class="row">
+ <tr>
+<td class="wrapper last">
+    <table class="twelve columns">
+    <tr><img src="https://img.en25.com/EloquaImages/clients/LifeSize/{6e324630-becc-4c59-992f-d5d923ee2c8c}_ls_header_purple_blue_600px.jpg" alt="" width="100%" height="28"  style="height:auto !important; max-width:600px !important; width: 100% !important;" /></tr>
+    <tr>
+   <td>
+  <h5 class='lifeButton' style="text-align:left;">Поздравляем! Ваша учетная запись Lifesize Cloud теперь активна. </h5>
+  <p class="lead"></p>
+  <p>Здравствуйте! #email#,</p>
+  <p>Поздравляем! Ваша учетная запись Lifesize Cloud теперь активна. Только Lifesize предлагает превосходную комнатную видеосистему с лучшими в своем классе мобильными приложениями в сочетании с облачной видеослужбой, так что полноценная связь доступна везде: от конференц-зала до офиса и даже в дороге.</p>
+  <p>Your subscription to Lifesize Cloud extends through #subscriptionEndDate#.</p>
+  
+   </td>
+   <td class="expander"></td>
+    </tr>
+    <hr/>
+    
+</table>
+ </td>
+  </tr>
+  <tr>
+ <td>
+<table class="three columns" align="left">
+    <tr>
+   <td>
+  <tr>
+ <td>
+<table class="tiny-button lifeButton">
+    <tr>
+   <td>
+  <a href="https://manage.lifesizecloud.com/">Sign in</a>
+    </tr>
+</table>
+ </td>
+ <td class="expander"></td>
+  </tr>
+  <td class="expander"></td>
+   </td>
+    </tr>
+</table>
+ </td>
+  </tr>
+   </table>
+  
+   <table class="container">
+  <tr>
+ <td>
+
+<p><span class="bold">Храните приведенную ниже информацию об учетной записи в легко доступном месте: </span>
+    <br>Ваше имя пользователя: #email#
+    
+    <br><a href="#skyEp#/#/download">Веб-консоль: Добавление и управление пользователями
+Загрузка приложений для ноутбуков и мобильных устройств
+ </a>
+    
+    <p>Обязательно подсоедините свою видеосистему Lifesize к Lifesize Cloud, чтобы получить все дополнительные преимущества, такие как совместно используемый каталог и автоматические обновления программного обеспечения! Чтобы ваша видеосистема Lifesize могла быть подсоединена к Lifesize Cloud, она должна подпадать под действие действующего соглашения о гарантийном техническом обслуживании (AMS, Assurance Maintenance Service). Вы должны использовать  <a href="#">программное обеспечение версии 2.0 или выше для видеосистем Lifesize Icon </a> и <a href="#">программное обеспечение версии 5.0 для видеосистем Lifesize 220.</a></p> 
+</p>
+ </td>
+  </tr>
+   </table>
+   
+   <table class= "container">
+  <tr>
+ <td>
+<hr />
+<h6 class="lifeButton">Полезные ресурсы:</h6>
+<table>
+    <tr>
+   <td class="three columns">
+  <a href="https://www.youtube.com/playlist?list=PLG-o5W6tjucytGdffkAdM20dSBOh7vhyf" title="Lifesize Video Library" target="_blank">
+  <img src="https://i.imgur.com/k7cjdKC.jpg" width="160" height="83" alt="Lifesize video library" border="0" align="left" style="font-family:Helvetica, Arial, sans-serif; font-size:14px; color:#281e8e; text-decoration:none; vertical-align:middle !important;"/></a>
+   </td>
+   <td class="nine columns"><br/><br/>Хотите узнать больше? Ознакомьтесь с нашей полезной <a href="https://www.youtube.com/playlist?list=PLG-o5W6tjucytGdffkAdM20dSBOh7vhyf" title="video library" target="_blank">видеобиблиотекой.</a></td>
+    </tr>
+</table>
+ </td>
+  </tr>
+   </table>
+   <table class="row ">
+  <tr>
+ <td class="wrapper last">
+<table class="twelve columns">
+    <tr>
+   <td  style="text-align:left;">
+ Если у вас возникли какие-либо вопросы, обращайтесь к нам. Наша <a href="https://www.lifesize.com/en/support" title="support team" target="_blank">служба поддержки всегда готова помочь.<br/>
+   </td>
+   <td class="expander"></td>
+    </tr>
+</table>
+ </td>
+  </tr>
+  <tr>
+ <td><br/>
+С уважением,<br/>
+команда Lifesize  <br />
+<hr />
+ </td>
+  </tr>
+   </table>
+<table class="">
+    <tr>
+   <td>
+  
+  <table>
+ <tr>
+<td class="center">
+    <a href="https://twitter.com/LifeSizeHD" target="_blank" title="Twitter">Twitter</a>&nbsp;|
+</td>
+<td><a target="_blank" href="https://www.facebook.com/lifesizehd" title="Facebook">&nbsp;Facebook</a>&nbsp;|
+</td>
+<td><a target="_blank" href="https://www.linkedin.com/company/lifesize-communications" title="LinkedIn">&nbsp;LinkedIn</a>&nbsp;|</td>
+<td><a target="_blank" href="https://plus.google.com/107083103726480679881/posts" title="Google+">&nbsp;Google+</a>
+</td>
+
+ </tr>
+  </table>
+   </tr>
+    </table>
+    <table class="row">
+   <tr>
+  <td class="wrapper last">
+ <table class="twelve columns">
+<tr>
+    <td align="center" >
+   <center>
+   <p style="text-align:left;" class="tinyFont" >©2015 Lifesize, a division of Logitech. All rights reserved. Information contained in this document is subject to change without notice. Lifesize is the registered trademark or trademark of Logitech. All other trademarks are the property of their respective owners.</p>
+   <p class="tinyFont"> Lifesize, a division of Logitech | 1601 S. Mopac | Suite 100 | Austin, Texas 78746 USA </p>
+   <p class="tinyFont">This email is intended for #email#</p>
+   <p style="text-align:left;" class="tinyFont"><a href="https://www.lifesize.com/en/company/legal-notices/privacy" title="Privacy Policy" target="_blank">Privacy Policy</a></p>
+   </center>
+    </td>
+    <td class="expander"></td>
+</tr>
+ </table>
+  </td>
+   </tr>
+    </table>
+    <!-- container end below -->
+</td>
+</tr>
+</table>
+</center>
+ </td>
+  </tr>
+   </table>
+    </body>
+</html>
